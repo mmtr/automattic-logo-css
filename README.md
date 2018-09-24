@@ -1,4 +1,6 @@
-# automattic-logo-css-flash-talk
+# Automattic logo with CSS
+
+Project demonstrating how to build the [Automattic](https://automattic.com) logo using only CSS. This demo was presented in a flash talk during the Automattic Grand Meetup 2018 (Orlando).  
 
 ## Project setup
 ```
