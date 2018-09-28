@@ -25,42 +25,44 @@
 </template>
 
 <script>
+    import Mousetrap from 'mousetrap';
+
     const outer = {
-        1: `width: 30vh;
-    height: 30vh;`,
-        2: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;`,
-        3: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;`,
-        4: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;
+        1: `width: 300px;
+    height: 300px;`,
+        2: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;`,
+        3: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;`,
+        4: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;
     transform: scaleY(0.92);`,
-        5: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;
+        5: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;
     transform: scaleY(0.92);`,
-        6: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;
+        6: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;
     transform: scaleY(0.92);
     position: relative;`,
-        7: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;
+        7: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;
     transform: scaleY(0.92);
     position: relative;`,
-        8: `width: 30vh;
-    height: 30vh;
-    border: 5vh solid #2E99CE;
-    border-radius: 100vh;
+        8: `width: 300px;
+    height: 300px;
+    border: 50px solid #2E99CE;
+    border-radius: 100px;
     transform: scaleY(0.92);
     position: relative;`,
     };
@@ -78,32 +80,33 @@
         6: `content: "";
     width: 20%;
     height: 60%;
-    display: block;
     background-color: #050708;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);`,
+    transform: translateX(-50%)
+               translateY(-50%);`,
         7: `content: "";
     width: 20%;
     height: 60%;
-    display: block;
     background-color: #050708;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    border-radius: 100vh;`,
+    transform: translateX(-50%)
+               translateY(-50%);
+    border-radius: 100px;`,
         8: `content: "";
     width: 20%;
     height: 60%;
-    display: block;
     background-color: #050708;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%) rotate(30deg);
-    border-radius: 100vh;`
+    transform: translateX(-50%)
+               translateY(-50%)
+               rotate(30deg);
+    border-radius: 100px;`
     };
 
     export default {
@@ -129,6 +132,11 @@
     ${inner[this.step]}
 }`;
             },
+        },
+
+        created() {
+            Mousetrap.bind('left', this.back);
+            Mousetrap.bind(['right', 'space'], this.next);
         },
 
         methods: {
@@ -169,7 +177,7 @@
     .logo__preview {
         padding: 1rem;
         width: 100vw;
-        height: 40vh;
+        height: 50vh;
         display: flex;
         position: relative;
         align-items: center;
@@ -190,7 +198,7 @@
 
     .logo__code {
         width: 100vw;
-        height: 60vh;
+        height: 50vh;
         display: flex;
         position: relative;
     }
@@ -268,7 +276,6 @@
         &::before {
             width: 20%;
             height: 60%;
-            display: block;
             background-color: $black;
         }
     }
@@ -299,5 +306,9 @@
         &::before {
             transform: translateX(-50%) translateY(-50%) rotate(30deg);
         }
+    }
+
+    .hljs {
+        font-size: 2vw;
     }
 </style>
