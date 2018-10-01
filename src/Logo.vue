@@ -9,11 +9,11 @@
         </div>
         <div class="logo__code">
             <div class="logo__code__outer">
-                Outer
+                <div class="logo__code__title">Outer</div>
                 <pre v-highlightjs="outer"><code class="css"></code></pre>
             </div>
             <div class="logo__code__inner">
-                Inner
+                <div class="logo__code__title">Inner</div>
                 <pre v-highlightjs="inner"><code class="css"></code></pre>
             </div>
         </div>
@@ -36,35 +36,41 @@
         3: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;`,
+    border-radius: 150px;`,
         4: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;
+    border-radius: 150px;
     transform: scaleY(0.92);`,
         5: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;
+    border-radius: 150px;
     transform: scaleY(0.92);`,
         6: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;
+    border-radius: 150px;
     transform: scaleY(0.92);
-    position: relative;`,
+    display: flex;
+    align-items: center;
+    justify-content: center;`,
         7: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;
+    border-radius: 150px;
     transform: scaleY(0.92);
-    position: relative;`,
+    display: flex;
+    align-items: center;
+    justify-content: center;`,
         8: `width: 300px;
     height: 300px;
     border: 50px solid #2E99CE;
-    border-radius: 100px;
+    border-radius: 150px;
     transform: scaleY(0.92);
-    position: relative;`,
+    display: flex;
+    align-items: center;
+    justify-content: center;`,
     };
 
     const inner = {
@@ -73,40 +79,24 @@
         3: `content: "";`,
         4: `content: "";`,
         5: `content: "";
-    width: 20%;
-    height: 60%;
-    display: block;
+    width: 60px;
+    height: 180px;
     background-color: #050708;`,
         6: `content: "";
-    width: 20%;
-    height: 60%;
-    background-color: #050708;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%)
-               translateY(-50%);`,
+    width: 60px;
+    height: 180px;
+    background-color: #050708;`,
         7: `content: "";
-    width: 20%;
-    height: 60%;
+    width: 60px;
+    height: 180px;
     background-color: #050708;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%)
-               translateY(-50%);
-    border-radius: 100px;`,
+    border-radius: 150px;`,
         8: `content: "";
-    width: 20%;
-    height: 60%;
+    width: 60px;
+    height: 180px;
     background-color: #050708;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%)
-               translateY(-50%)
-               rotate(30deg);
-    border-radius: 100px;`
+    border-radius: 150px;
+    transform: rotate(30deg);`
     };
 
     export default {
@@ -208,10 +198,24 @@
         border-top: 5px solid $black;
         width: 50vw;
         padding: 1rem;
+        position: relative;
+
+        pre {
+            margin: 0;
+        }
     }
 
     .logo__code__outer {
         border-right: 5px solid $black;
+
+    }
+
+    .logo__code__title {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: lighten($black, 80%);
     }
 
     .logo__controls {
@@ -262,7 +266,7 @@
 
     .automattic-3 {
         @extend .automattic-2;
-        border-radius: 100vh;
+        border-radius: 15vh;
     }
 
     .automattic-4 {
@@ -296,7 +300,7 @@
         @extend .automattic-6;
 
         &::before {
-            border-radius: 100vh;
+            border-radius: 2vh;
         }
     }
 
